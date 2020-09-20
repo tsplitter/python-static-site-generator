@@ -25,6 +25,7 @@ class Site:
                 return parser
 
     def run_parser(self, path):
+        parser = load_parser(path.suffix)
         for parser in self.parsers:
             if parser is not None:
                 parser.parse(path, self.source, self.dest)
